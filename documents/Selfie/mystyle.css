@@ -1,0 +1,98 @@
+/************************************************************************************************************
+												CSS RESET
+************************************************************************************************************/
+html, body, address, blockquote, div, dl, form, h1, h2, h3, h4, h5, h6, ol, p, pre, table, ul,
+dd, dt, li, tbody, td, tfoot, th, thead, tr, button, del, ins, map, object,
+a, abbr, acronym, b, bdo, big, br, cite, code, dfn, em, i, img, kbd, q, samp, small, span,
+strong, sub, sup, tt, var, legend, fieldset {
+ margin: 0;
+ padding: 0;
+}
+
+/************************************************************************************************************
+												BODY & WRAPPERS
+************************************************************************************************************/
+html {
+	background-color: #ECF0F1;
+}
+
+canvas {
+	border: 1px dotted #E74C3C;
+}
+	 
+video {
+	border: 1px dotted #E74C3C;
+}
+
+#cameraFeedHeader{
+	padding-bottom: 1em;
+}
+
+#photoEditorHeader{
+	padding: 1em;
+}
+
+#topWrapper{
+	background-color: #2C3E50;
+	border-bottom: 0.2em solid;
+	border-color: #E74C3C;
+	width: 100%;
+	text-align: center;
+	padding-top: 1em;
+	padding-bottom: 1em;
+	font-family: verdana;
+	color: #FFFFFF;
+}
+
+#wrap{
+	margin: 20px auto;
+	width: 100%;
+	padding-bottom: 20px;
+	padding-top: 20px;
+	text-align: center;
+	clear:both;
+	font-family: verdana; 
+}
+
+#frameContent, #filterContent, #menuContent {
+	padding: 1.5em;
+}
+
+#framesHeader, #filterHeader, #paintHeader, #uploadHeader{
+	padding-bottom: 0.8em;
+}
+/************************************************************************************************************
+												BUTTONS
+************************************************************************************************************/  
+
+#btnCapture, #btnFrameNeg, #btnFramePol, #btnNoFrame, #btnInvert, #btnGrayScale, #btnNoFilter, #btnUpload{
+	background-color: #2C3E50;
+	bottom: 0.3em solid;
+	border: solid 0.2em #E74C3C;
+	text-align: center;
+	padding: 0.5em;
+	font-family: verdana;
+	color: #FFFFFF;
+	cursor: pointer;
+}
+
+.button {
+	background-color: #2C3E50;
+	bottom: 0.3em solid;
+	border: solid 2px #E74C3C;
+	text-align: center;
+	padding: 0.5em;
+	font-family: verdana;
+	font-size: 14px;
+	color: #FFFFFF;
+	cursor: pointer;
+}
+
+ul { 
+  list-style: none; 
+  margin: 0;
+}
+
+li { 
+  display: inline; 
+}

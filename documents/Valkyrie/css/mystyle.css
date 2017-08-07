@@ -1,0 +1,77 @@
+/************************************************************************************************************
+												CSS RESET
+************************************************************************************************************/
+html, body, address, blockquote, div, dl, form, h1, h2, h3, h4, h5, h6, ol, p, pre, table, ul,
+dd, dt, li, tbody, td, tfoot, th, thead, tr, button, del, ins, map, object,
+a, abbr, acronym, b, bdo, big, br, cite, code, dfn, em, i, img, kbd, q, samp, small, span,
+strong, sub, sup, tt, var, legend, fieldset {
+ margin: 0;
+ padding: 0;
+}
+
+html{
+	overflow-y: scroll;
+	background-color: #9de0f1;
+}
+
+#topWrapper{
+	background-color: #00aadd;
+	border-bottom: 0.2em solid;
+	border-color: #ffffff;
+	width: 100%;
+	padding-top: 1em;
+	padding-bottom: 1em;
+	padding-left: 40px;
+	font-family: verdana;
+	color: #FFFFFF;
+}
+
+#wrap{
+	margin: auto;
+	width: 100%;
+	padding-bottom: 20px;
+	padding-top: 40px;
+	padding-left: 40px;
+	text-align: left;
+	clear:both;
+	font-family: verdana; 
+}
+
+#background, #enemy, #enemy2, #enemy3, #player {  
+	position: absolute;
+	background: transparent;
+	border: 0.2em solid;
+	border-color: #ffffff;
+}
+
+#bottomHeader{
+	margin-top: 20px;
+	background-color: #00aadd;
+	border-top: 0.2em solid;
+	border-bottom: 0.2em solid;
+	border-color: #ffffff;
+	width: 100%;
+	padding-top: 1em;
+	padding-bottom: 1em;
+	padding-left: 40px;
+	font-family: verdana;
+	color: #FFFFFF;
+}
+
+#bottomText{
+	padding-top: 1em;
+	padding-bottom: 1em;
+	padding-left: 40px;
+	font-family: verdana;
+	color: #000000;
+}
+
+#HP{
+	margin-top: 500px;
+	padding-left: 40px;
+	font-family: verdana;
+	font-size: 26px;
+	color: #000000;
+}
+
+

@@ -1,0 +1,313 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<title>Game - MMP CA</title>
+		<script type="text/javascript" src="raf.js"></script>
+		<!-- Link to Style Sheet -->
+		<link rel="stylesheet" type="text/css" href="./css/mystyle.css" />
+		<script type="text/javascript">
+		
+			//Canvas and Context
+			var ctx;
+			var canvas;
+			var context;
+			var canvasWidth = 800;
+			var canvasHeight = 500;
+			
+			//X's and Y's
+			var xSprite;
+			var ySprite;
+			var xBG = 0;
+			var yBG = 0;
+			var xBomb = 800;
+			var yBomb = 0;
+			var xBomb2 = 800;
+			var yBomb2 = 0;
+			var xBomb3 = 800;
+			var yBomb3 = 0;
+			var yBombRandom = 0;
+			var yBombRandom2 = 0;
+			var yBombRandom3 = 0;
+			var dx = 3;
+			var dy = 5;		
+			
+			//Misc variables
+			var life = 130;
+			var count = 0;
+			var countFrames = 0;
+			var speed = 0;
+			var enemySpawnTimer = 0;
+			var sloMoCounter = 0;
+			var sloMoRate = 4;
+			
+			//Audio
+			var blast = new Audio("./audio/blast.mp3");
+			var blast2 = new Audio("./audio/blast2.mp3");
+			var blast3 = new Audio("./audio/blast3.mp3");
+			var backgroundAudio = new Audio("./audio/backgroundAudio.mp3");
+			
+			//Keys - SWITCH TO ARROW KEYS
+			var keyW = false;
+			var keyS = false;
+			
+			//Create new Image				
+			var Bg = new Image();
+			var sprite = new Image();
+			var bomb = new Image();
+			var bomb2 = new Image();
+			var bomb3 = new Image();
+			var explosion = new Image();
+			var explosion2 = new Image();
+			var explosion3 = new Image();
+			
+			//Get the Image source file
+			Bg.src = "./images/bg.png";	
+			sprite.src = "./images/flying turtle.png";
+			bomb.src = "./images/bomb.png";
+			bomb2.src = "./images/bomb2.png";
+			bomb3.src = "./images/bomb3.png";
+			explosion.src = "./images/explosion.png";
+			explosion2.src = "./images/explosion2.png";
+			explosion3.src = "./images/explosion3.png";
+			
+			//draw the Image on page load
+			Bg.onload = drawBg;			
+			sprite.onload = drawSprite;
+			bomb.onload = drawBomb;
+			bomb2.onload = drawBomb2;
+			bomb3.onload = drawBomb3;
+			
+			//Key event listeners
+			window.addEventListener("keydown", onKeyDown, false);
+			window.addEventListener("keyup", onKeyUp, false);
+			
+			//Key down function
+			function onKeyDown(event){
+				var keyCode = event.keyCode;
+				switch(keyCode){
+					case 83:  //s
+						keyS = true;
+					break;
+					case 87: //w
+						keyW = true;
+					break;
+				}
+			}
+			
+			//Key up function
+			function onKeyUp(event){
+				var keyCode = event.keyCode;
+				switch(keyCode){
+					case 83:  //s
+						keyS = false;
+					break;
+					case 87: //w
+						keyW = false;
+					break;
+				}
+			}
+			
+			//Draw and loop player sprite 
+			function drawSprite() {
+				canvas = document.getElementById('player');	//Assign the canvas element to a variable
+				context = canvas.getContext('2d');			//Assign the 2d rendering context to a variable
+				requestAnimationFrame(drawSprite);			//Provides native API for running an animation in browser
+				context.clearRect(dx - 5,dy - 5,110,110);	//clear Canvas
+				
+				//Cuts out section of image and place it in canvas
+				xSprite = (countFrames % 2)* 100;
+				ySprite = Math.floor(countFrames /2) * 100;
+				context.drawImage(sprite, xSprite, ySprite, 100, 100, dx,dy, 85, 85);				
+				
+				//Slows the rate the sprites animation moves
+				if (sloMoCounter == sloMoRate) {
+					if(countFrames==3){
+						countFrames= 0;
+					} else {
+						countFrames++;
+					}
+					sloMoCounter = 0;
+				}
+				sloMoCounter++;
+				
+				//Sprite movement
+				if(keyS == true){
+					if(dy >= 400){
+						dy == 399;
+					}
+					else {
+					dy += 2.5;
+					}
+				}
+				if (keyW == true) {
+					if(dy <= 0){
+						dy == 1;
+					}
+					else {
+					dy -= 2.5;
+					}
+				}
+				
+				//Audio
+				backgroundAudio.play();
+				
+				//Display players health in the HTML
+				HP.innerHTML = "Life: " + life;
+				
+				//If you die, reload the page
+				console.log(life);
+				if (life <= 0) {
+					location.reload();
+				}
+			}	
+
+			//Draw background image
+			function drawBg() {
+				canvas = document.getElementById('background');	//Assign the canvas element to a variable
+				context = canvas.getContext('2d');				//Assign the 2d rendering context to a variable
+				requestAnimationFrame(drawBg);					//Provides native API for running an animation in browser
+				context.clearRect(xBG,yBG,0,0);					//clear Canvas
+				
+				//Set speed and move bg
+				speed = 1;
+				xBG -= speed;
+				
+				//Draw original image and looping image
+				context.drawImage(Bg, xBG, yBG);					
+				context.drawImage(Bg, xBG - 800, yBG);
+				
+				//when the bg scrolls off screen, reset it
+				if(xBG <= 0){
+					xBG = 800;
+				}
+			}
+
+			function drawBomb() {
+				canvas = document.getElementById('enemy');	//Assign the canvas element to a variable
+				context = canvas.getContext('2d');			//Assign the 2d rendering context to a variable
+				requestAnimationFrame(drawBomb);			//Provides native API for running an animation in browser
+				context.clearRect(xBomb,yBomb,70,60);		//clear Canvas							
+				
+				speed = 3;
+				xBomb -= speed;
+				yBomb = yBombRandom;
+				context.drawImage(bomb, xBomb, yBomb);			
+				
+				//Loops bomb to appear at random Y
+				if(xBomb <= -80){
+					xBomb = 850;
+					yBombRandom = Math.floor((Math.random() * 450) + 0);
+				}
+				
+				//If the bomb hits the player
+				if(xBomb < dx + 100 && xBomb + 65 > dx &&
+					yBomb < dy + 100 && yBomb + 55 > dy){
+						life--;
+						blast.play();
+						context.drawImage(explosion, xBomb, yBomb);
+				}	
+		}
+		
+		function drawBomb2() {
+				canvas = document.getElementById('enemy2');	//Assign the canvas element to a variable
+				context = canvas.getContext('2d');			//Assign the 2d rendering context to a variable
+				requestAnimationFrame(drawBomb2);			//Provides native API for running an animation in browser
+				context.clearRect(xBomb2,yBomb2,105,90);	//clear Canvas
+				
+				//Spawn meaner bomb after a few seconds
+				enemySpawnTimer++;
+				if (enemySpawnTimer >= 1200){
+					speed = 5;
+					xBomb2 -= speed;
+					yBomb2 = yBombRandom2;
+					context.drawImage(bomb2, xBomb2, yBomb2);
+				}
+				
+				//Loops bomb to appear at random Y
+				if(xBomb2 <= -105){
+					xBomb2 = 850;
+					yBombRandom2 = Math.floor((Math.random() * 450) + 0);
+				}
+				
+				//If the bomb hits the player
+				if(xBomb2 < dx + 100 && xBomb2 + 100 > dx &&
+					yBomb2 < dy + 100 && yBomb2 + 80 > dy){
+					life--;
+					blast2.play();
+					context.drawImage(explosion2, xBomb2, yBomb2);
+					console.log("collision detected!2");
+			}			
+		}
+		function drawBomb3() {
+				canvas = document.getElementById('enemy3');	//Assign the canvas element to a variable
+				context = canvas.getContext('2d');			//Assign the 2d rendering context to a variable
+				requestAnimationFrame(drawBomb3);			//Provides native API for running an animation in browser
+				context.clearRect(xBomb3,yBomb3,135,85);	//clear Canvas
+				
+				//Spawn even meaner bomb after a few seconds
+				enemySpawnTimer++;
+				if (enemySpawnTimer >= 2400){
+					speed = 7.5;
+					xBomb3 -= speed;
+					yBomb3 = yBombRandom3;
+					context.drawImage(bomb3, xBomb3, yBomb3);
+				}
+				
+				//Loops bomb to appear at random Y
+				if(xBomb3 <= -140){
+					xBomb3 = 850;
+					yBombRandom3 = Math.floor((Math.random() * 450) + 0);
+				}
+				
+				//If the bomb hits the player
+				if(xBomb3 < dx + 100 && xBomb3 + 130 > dx &&
+					yBomb3 < dy + 100 && yBomb3 + 70 > dy){
+					life--;
+					blast3.play();
+					context.drawImage(explosion3, xBomb3, yBomb3);
+					console.log("collision detected!3");
+			}			
+		}
+		</script>
+	</head>
+	<body>
+		<div id ="topWrapper">
+			<h3>Game - MMP CA</h3>
+		</div>
+		<div id ="wrap">
+			<!-- Displays background -->
+			<canvas id="background" width="800" height="500">
+				Browser not supported. Please use a different browser
+			</canvas>
+			
+			<!-- Displays player -->
+			<canvas id="player" width="800" height="500">
+				Browser not supported. Please use a different browser
+			</canvas>
+			
+			<!-- Displays enemies -->
+			<canvas id="enemy" width="800" height="500">
+				Browser not supported. Please use a different browser
+			</canvas>
+			<canvas id="enemy2" width="800" height="500">
+				Browser not supported. Please use a different browser
+			</canvas>
+			<canvas id="enemy3" width="800" height="500">
+				Browser not supported. Please use a different browser
+			</canvas>
+		</div>
+		
+		<!-- Display Life -->
+		<div id ="HP"><h2> 0 </h2></div>
+		
+		<!-- Bottom Text -->
+		<div id = "bottomHeader">
+			<h2> How to play </h2>
+		</div>
+		<div id="bottomText">
+			<li> Help the turtle avoid the missiles! </li>
+			<li> Use the <b>W</b> key to go up and the <b>S</b> key to go down to move the turtle </li>
+			<li> If the turtle's life reaches <b>0</b>, you lose</li>
+			<li> <b>Try survive as long as possible!<b/> </li>
+		</div>
+	</body>

@@ -1,0 +1,394 @@
+/******************
+	CSS RESET
+******************/
+html, body, address, blockquote, div, dl, form, h1, h2, h3, h4, h5, h6, ol, p, pre, table, ul,
+dd, dt, li, tbody, td, tfoot, th, thead, tr, button, del, ins, map, object,
+a, abbr, acronym, b, bdo, big, br, cite, code, dfn, em, i, img, kbd, q, samp, small, span,
+strong, sub, sup, tt, var, legend, fieldset {
+	margin: 0;
+	padding: 0;
+}
+
+/************************************
+		FONT FACES
+************************************/
+
+@font-face {
+    font-family: 'Roboto Black';
+    src: url('../fonts/Roboto-Black-webfont.eot');
+    src: url('../fonts/Roboto-Black-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/Roboto-Black-webfont.woff') format('woff'),
+         url('../fonts/Roboto-Black-webfont.ttf') format('truetype'),
+         url('../fonts/Roboto-Black-webfont.svg#RobotoMediumItalic') format('svg');
+}
+
+@font-face {
+    font-family: 'Roboto Medium';
+    src: url('../fonts/Roboto-Medium-webfont.eot');
+    src: url('../fonts/Roboto-Medium-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/Roboto-Medium-webfont.woff') format('woff'),
+         url('../fonts/Roboto-Medium-webfont.ttf') format('truetype'),
+         url('../fonts/Roboto-Medium-webfont.svg#RobotoMedium') format('svg');
+}
+
+@font-face {
+    font-family: 'Roboto Bold';
+    src: url('../fonts/Roboto-Bold-webfont.eot');
+    src: url('../fonts/Roboto-Bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/Roboto-Bold-webfont.woff') format('woff'),
+         url('../fonts/Roboto-Bold-webfont.ttf') format('truetype'),
+         url('../fonts/Roboto-Bold-webfont.svg#RobotoMedium') format('svg');
+}
+
+@font-face {
+    font-family: 'Roboto Light';
+    src: url('../fonts/Roboto-Light-webfont.eot');
+    src: url('../fonts/Roboto-Light-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/Roboto-Light-webfont.woff') format('woff'),
+         url('../fonts/Roboto-Light-webfont.ttf') format('truetype'),
+         url('../fonts/Roboto-Light-webfont.svg#RobotoLight') format('svg');
+}
+
+@font-face {
+    font-family: 'Lora Italic';
+    src: url('../fonts/lora-italic-webfont.eot');
+    src: url('../fonts/lora-italic-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/lora-italic-webfont.woff') format('woff'),
+         url('../fonts/lora-italic-webfont.ttf') format('truetype'),
+         url('../fonts/lora-italic-webfont.svg#RobotoLight') format('svg');
+}
+
+@font-face {
+    font-family: 'Lora Bold Italic';
+    src: url('../fonts/lora-bolditalic-webfontt.eot');
+    src: url('../fonts/lora-bolditalic-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/lora-bolditalic-webfont.woff') format('woff'),
+         url('../fonts/lora-bolditalic-webfont.ttf') format('truetype'),
+         url('../fonts/lora-bolditalic-webfont.svg#RobotoLight') format('svg');
+}
+
+/************************************
+		ARTICLE BANNER
+************************************/
+
+#articlePage{
+	background-image: url("../images/backgroundImages/PortfolioTileBG.png");
+}
+
+#articleBanner{
+	width: 100%;
+	height: 70vh;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-color: blue;
+}
+
+.techBG {
+	background-color: rgba(0,0,0,0.9);
+	position: absolute;
+	margin-top: 20px;
+	margin-right: 15px;
+	right:0;
+}
+
+.techImages{
+	text-align: right;
+	margin: 10px 10px 10px 10px;
+}
+
+.techImg {
+	width: 70px;
+	height: 50px;
+	margin: 2px;
+}
+
+.projectTitleBG {
+	background-color: rgba(0,0,0,0.9);
+	border-bottom: 3px solid #1f68ed;
+	position: absolute;
+	width:1140px;
+	bottom:0;
+	left: 20;
+	overflow: hidden;
+}
+
+.projectTitle {
+	font-family: Roboto Black;
+	text-align: left;
+	color: white;
+	font-size: 50px;
+	margin: 10px 0 2.5px 20px;
+}
+
+.projectSubTitle{
+	font-family: Lora Italic;
+	text-align: left;
+	color: white;
+	font-size: 25px;
+	margin: 2.5px 0 10px 20px;
+}
+
+/************************************
+		ARTICLE CONTENT
+************************************/
+
+.Bold {
+	font-family: Roboto Black;
+}
+
+.dropcap{
+	font-family: Roboto Black;
+	float: left; 
+	font-size: 100px; 
+	line-height: 40px;
+	margin-top: 20px;
+	padding-right: 7px;
+	padding-bottom: 7px;
+	color: #1f68ed;
+}
+
+.leadParagraph{
+	font-family: Lora Italic;
+	font-size: 35px;
+	color: #111111;
+	margin: 35px 0px 0px 0px;
+}
+
+.articleSection{
+	font-family: Roboto Black;
+	font-size: 28px;
+	color: #111111;
+	margin: 50px 0 0px 0;
+}
+
+.paragraph{
+	font-family: Roboto Light;
+	font-size: 19px;
+	line-height: 28px;
+	color: black;
+	margin: 50px 0px 10px 0px;
+}
+
+.thesis a{
+	color: black;
+	text-decoration: none;
+}
+
+.thesis {
+	font-family: Roboto Black;
+	font-size: 22px;
+	margin: 40px 0 0 20px;
+}
+
+.icons{
+	width: 25px;
+	height: 25px;
+	margin: 0 5px 5px 0;
+}
+
+.dot {
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  margin: 50px 2px 0px 2px;
+  background-color: #1f68ed;
+  border-radius: 50%;
+  opacity: 0.8;
+}
+
+/************************************
+		NAV
+************************************/
+
+.nav{
+	height: 100px;
+	width: 100%;
+	background-color: rgba(0,0,0,0.8);
+}
+
+.footer{
+	margin-top: 40px;
+	width: 100%;
+	background-color: rgba(0,0,0,0.8);
+}
+
+.backToMain {
+	font-family: Roboto Black;
+	font-size: 22px;
+	color: black;
+	margin-top: 40px;
+	margin-left: 20px;
+}
+
+.backToMain  a { 
+	text-decoration: none;
+	color: black;
+}
+
+.backToMainFoot {
+	font-family: Roboto Black;
+	font-size: 22px;
+	color: white;
+	margin-top: 40px;
+	margin-left: 20px;
+	margin-bottom: 40px;
+}
+
+.backToMainFoot  a { 
+	text-decoration: none;
+	color: white;
+}
+
+.backUnderline:hover{
+	border-bottom: 2px solid #1f68ed;
+}
+
+.arrow{
+	width:18px;
+	height: 18px;
+	padding-bottom: 3px;
+}
+
+.thesis2 {
+	font-family: Roboto Black;
+	font-size: 22px;
+	color: white;
+	margin-top: 35px;
+	margin-bottom: 40px;
+}
+
+.thesis2 a{
+	color: white;
+	text-decoration: none;
+}
+
+/************************************
+		MEDIA QUERIES
+************************************/
+
+@media screen and (max-width: 1200px) {
+	
+	.projectTitleBG {
+		width: 97%;
+	}
+}
+
+@media screen and (max-width: 990px) {
+	
+	.dotRow {
+		text-align: center;
+	}
+	
+	.projectTitleBG {
+		width: 96%;
+	}
+	
+	.projectTitle {
+		font-size: 40px;
+	}
+
+	.projectSubTitle{
+		font-size: 23px;
+	}
+	
+	.leadParagraph{
+		font-size: 29px;
+	}
+
+	.paragraph{
+		margin: 20px 0 0px 0;
+	}
+	
+	.odd{
+		margin-bottom: -40px;
+	}
+	
+	.backToMain, .backToMainFoot, .thesis, .thesis2{
+		margin-left: 0px;
+		font-size: 21px;
+	}
+	
+	.backToMainFoot {
+		margin-left: 0px;
+	}
+}
+
+@media screen and (max-width: 650px) {
+
+	#articleBanner{
+		width: 100%;
+		height: 50vh;
+		background-size: cover;
+		background-repeat: no-repeat;
+		background-color: blue;
+	}
+
+	.techImg {
+		width: 60px;
+		height: 30px;
+		margin: 2px;
+	}
+	
+	.techImages{
+		text-align: right;
+		margin: 5px 5px 5px 5px;
+	}
+
+	.leadParagraph{
+		font-size: 25px;
+	}
+
+	.dotRow {
+		text-align: center;
+	}
+	
+	.projectTitleBG {
+		width: 95%;
+	}
+	
+	.projectTitle {
+		font-size: 30px;
+	}
+
+	.projectSubTitle{
+		font-size: 23px;
+	}
+}
+
+@media screen and (max-width: 480px) {
+
+	.techImg {
+		width: 50px;
+		height: 20px;
+		margin: 2px;
+	}
+	
+	.techImages{
+		text-align: right;
+		margin: 5px 5px 5px 5px;
+	}
+
+	.dotRow {
+		text-align: center;
+	}
+	
+	.projectTitleBG {
+		width: 93%;
+	}
+	
+	.projectTitle {
+		font-size: 22px;
+	}
+
+	.projectSubTitle{
+		font-size: 17px;
+	}
+	
+	.leadParagraph{
+		font-size: 22px;
+	}
+	
+	.backToMain, .backToMainFoot, .thesis, .thesis2{
+		font-size: 16px;
+	}
+}

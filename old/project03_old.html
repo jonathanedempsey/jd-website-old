@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+		
+		<!-- Title -->
+		<title> Jonathan Dempsey </title>
+		
+		<!-- Fav Icons -->
+		<link rel="icon" type="image/png" href="./favicon/favicon-32x32.png" sizes="32x32" />
+		<link rel="icon" type="image/png" href="./favicon/favicon-16x16.png" sizes="16x16" />
+		
+		<!-- Styles -->
+		<link rel="stylesheet" href="css/flickity.css" media="screen">
+		<link href="css/bootstrap.min.css" rel="stylesheet">
+		<link href="css/mystyleArticle.css" rel="stylesheet">
+		
+		<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+		<!--[if lt IE 9]>
+		  <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+		  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+		<![endif]-->
+		
+		<!-- Scripts -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>			
+	</head>	
+	<body>		
+		<!--	Article Page	-->
+		<div id="articlePage">
+			<!--	Banner	-->
+			<div class="articleBannerBG ">
+				<div class="container">			
+					<div class="row">
+						<div class="col-md-12">
+							<div id="articleBanner" style="background-image:url(./images/projectImages/Project03Banner.png);">	
+								<div class="techBG">
+									<div class="techImages">
+										<img src="./images/projectImages/IconHTML.png" class="techImg">
+										<img src="./images/projectImages/IconJavaScript.png" class="techImg">
+									</div><!-- end techImages -->
+								</div><!-- end techBG -->
+
+								<div class="projectTitleBG">
+									<h1 class="projectTitle"> VALKYRIE </h1>
+									<h2 class="projectSubTitle"> HTML5 Canvas Game </h2>
+								</div><!-- end projectTitleBig -->
+							</div><!-- end articleBanner -->
+						</div><!-- end col-md-12 -->
+					</div><!-- end row -->
+				</div><!-- end container -->
+			</div><!-- end articleBannerBG -->
+
+			<!--	Article Body	-->
+			<div class="container">	
+			
+				<!--	WHAT IT DOES	-->
+				<div class="row">
+					<div class="col-md-3">
+						<h1 class="articleSection"> WHAT IT DOES </h1>
+					</div>
+					
+					<div class="col-md-9">
+						<p class="paragraph"> A HTML5/JavaScript canvas game was created that allowed 
+							users to control Valkyrie, a flying turtle, with the aim of avoiding oncoming 
+							missiles. The turtle character is located at the far left of the canvas and is 
+							moved up and down by using the W and S keys. The oncoming missiles move from the 
+							right of the screen to the left, towards the turtle. The missiles spawn randomly 
+							along the Y axis on the right as they leave the canvas to the left. If a missile 
+							hits the turtle the missile changes from a missile image to an explosion image, 
+							an explosion sound file is played and the turtles Hit Points go down. Once the 
+							turtle’s HP hits 0, the game resets. 
+						</p>
+					</div>
+				</div><!--	end WHAT IT DOES	-->
+				
+				<!--	Dot Separator	-->
+				<div class="row">
+					<div class="col-md-7">
+					</div>
+					
+					<div class="col-md-1">
+						<div class="dot">
+						</div>
+						
+						<div class="dot">
+						</div>
+						
+						<div class="dot">
+						</div>
+					</div>
+					
+					<div class="col-md-4">
+					</div>
+				</div><!-- end Dot Separator -->
+				
+				<!--	HOW IT WORKS	-->
+				<div class="row">
+					<div class="col-md-3">
+						<h1 class="articleSection"> HOW IT WORKS </h1>
+					</div>
+					
+					<div class="col-md-9">
+						<p class="paragraph"> The HTML is primarily used to employ the games canvas and to display the turtle’s HP. Multiple canvases are used in the game, 
+							one for each asset. The JavaScript is where all the games functionality occur. The audio, images, key bindings and variables are all initialized before 
+							the 3 main functions execute. The first function controls the turtle’s HP, the turtle’s movement through the use of key events and the function that runs 
+							through the sprite sheet to give the turtle animation. The next function manages the looping background image of the clouds and initiates the game’s 
+							background music. The final few functions are used to set the missiles varying speeds, their X and Y values, and the functionality revolved around the 
+							collision detection.
+						</p>
+					</div>
+				</div><!-- end HOW IT WORKS -->
+				
+				<!--	Dot Separator	-->
+				<div class="row">
+					<div class="col-md-7">
+					</div>
+					
+					<div class="col-md-1">
+						<div class="dot">
+						</div>
+						
+						<div class="dot">
+						</div>
+						
+						<div class="dot">
+						</div>
+					</div>
+					
+					<div class="col-md-4">
+					</div>
+				</div><!-- end Dot Separator -->
+				
+				<!--	WHAT I LEARNED	-->
+				<div class="row">
+					<div class="col-md-3">
+						<h1 class="articleSection"> WHAT I LEARNED </h1>
+					</div>
+					
+					<div class="col-md-9">
+						<p class="paragraph"> In this project, I learned how to implement HTML5 canvases which were given functionality through JavaScript. 
+							Multiple canvases were implemented in the game. Each canvas is used to 
+							layer the one of the games elements, such as the background, turtle and enemies. The turtle’s 
+							animation is made by making a function that reads iteratively through a sprite sheet and prints 
+							the frames of the sprite sheet into the canvas. Event listeners were made that were bound to the 
+							W and S keys so when pressed, they move the turtle sprite up and down the canvas. Collision detection
+							was used between the turtle sprite and enemies to play sound clips, change sprites and affect the players health. Finally, A 
+							looping background using two images was used to give the illusion that the turtle is flying through the air.
+						</p>
+					</div>
+				</div><!--	end WHAT I LEARNED	-->
+				
+				<!-- Thesis Download -->
+				<div class="row">
+					<div class="col-md-3">
+					</div>
+					<div class="col-md-9">
+						<p class="paragraph thesis"> TRY OUT THE DEMO <a href="./documents/Valkyrie/HTMLGame_Flyingturtle.html" target="_blank">HERE</a>
+						</p>
+					</div>
+				</div><!-- end thesis download -->
+			</div><!-- end container -->
+			
+			<!--	Footer	-->
+			<div class="footer">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-3">
+							<h1 class="backToMain"><span class="backUnderline"><a href="index.html#portfolioPage"><img src="./images/arrows.png" class="arrow"> BACK TO MAIN </a></span></h1>
+						</div>
+					</div><!-- end row -->
+				</div><!-- end container -->		
+			</div><!-- end Footer -->
+		</div><!-- end article page -->
+	</body>
+</html>

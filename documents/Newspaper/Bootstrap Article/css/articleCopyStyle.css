@@ -1,0 +1,114 @@
+/******************
+	CSS RESET
+******************/
+html, body, address, blockquote, div, dl, form, h1, h2, h3, h4, h5, h6, ol, p, pre, table, ul,
+dd, dt, li, tbody, td, tfoot, th, thead, tr, button, del, ins, map, object,
+a, abbr, acronym, b, bdo, big, br, cite, code, dfn, em, i, img, kbd, q, samp, small, span,
+strong, sub, sup, tt, var, legend, fieldset {
+ margin: 0;
+ padding: 0;
+}
+
+@font-face {
+    font-family: 'TeX Gyre Termes';
+    src: url('./fonts/texgyretermes-regular-webfont.eot');
+    src: url('./fonts/texgyretermes-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('./fonts/texgyretermes-regular-webfont.woff') format('woff'),
+         url('./fonts/texgyretermes-regular-webfont.ttf') format('truetype'),
+         url('./fonts/texgyretermes-regular-webfont') format('svg');
+}
+
+/******************
+	HEADER
+******************/
+.Header{
+	margin-top: 30px;
+	margin-bottom: 30px;
+	border-bottom: 1px solid;
+}
+.date{
+	text-align: left;
+	margin-top: 20px;
+}
+.topic{
+	text-align: center;
+	margin-bottom: 8.5px;
+}
+.newspaper{
+	text-align: right;
+	margin-top: 20px;
+}
+
+/******************
+	IMAGE/TITLE SECTION
+******************/
+.image{
+	width: 750px;
+	text-align:center;
+}
+.captionOne{
+	margin-top: 5px;
+	font-size: 11px;
+}
+.captionTwo{
+	margin-top: 5px;
+	text-align: right;
+}
+.title{
+	font-size: 60px;
+	margin-top: 12px;
+	margin-bottom: 15px;
+}
+.lead{
+	font-size: 20px;
+	line-height: 22px;
+	margin-bottom: 18px;
+}
+.author{
+	font-size: 20px;
+	font-style: italic;
+	margin-bottom: 30px;
+}
+
+/******************
+	MAIN TEXT
+******************/
+.container{
+	font-family: TeX Gyre Termes; 
+}
+p{
+	font-size: 9.5px;
+	line-height: 10px;
+}
+hr{
+	 height: 1px; 
+	 visibility:hidden;
+	 margin-top: 10px;
+	 margin-bottom: 10px;
+}
+.indent{
+	text-indent: 13px;
+}
+.firstcharacter { 
+	float: left; 
+	font-size: 60px; 
+	line-height: 40px;	
+	padding-right: 9px;
+	padding-bottom: 8px;
+}
+.col{
+	text-align: justify;
+	word-break: break-all;
+}
+.columnSwitch{
+	text-align-last: center;
+}
+.squares{
+	width: 100%;
+	margin-bottom: 5px;
+}
+.endNote{
+	font-family: Wasco Sans;
+	font-size: 8px;
+}
+

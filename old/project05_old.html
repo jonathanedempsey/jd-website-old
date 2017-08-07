@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+		
+		<!-- Title -->
+		<title> Jonathan Dempsey </title>
+		
+		<!-- Fav Icons -->
+		<link rel="icon" type="image/png" href="./favicon/favicon-32x32.png" sizes="32x32" />
+		<link rel="icon" type="image/png" href="./favicon/favicon-16x16.png" sizes="16x16" />
+		
+		<!-- Styles -->
+		<link rel="stylesheet" href="css/flickity.css" media="screen">
+		<link href="css/bootstrap.min.css" rel="stylesheet">
+		<link href="css/mystyleArticle.css" rel="stylesheet">
+		
+		<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+		<!--[if lt IE 9]>
+		  <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+		  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+		<![endif]-->
+		
+		<!-- Scripts -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>			
+	</head>	
+	<body>		
+		<!--	Article Page	-->
+		<div id="articlePage">
+			<!--	Banner	-->
+			<div class="articleBannerBG ">
+				<div class="container">			
+					<div class="row">
+						<div class="col-md-12">
+							<div id="articleBanner" style="background-image:url(./images/projectImages/Project05Banner.png);">	
+								<div class="techBG">
+									<div class="techImages">
+										<img src="./images/projectImages/IconJavaScript.png" class="techImg">
+										<img src="./images/projectImages/IconHTML.png" class="techImg">
+									</div><!-- end techImages -->
+								</div><!-- end techBG -->
+
+								<div class="projectTitleBG">
+									<h1 class="projectTitle"> SELFIE APP </h1>
+									<h2 class="projectSubTitle"> JavaScript & HTML5 Canvas App </h2>
+								</div><!-- end projectTitleBig -->
+							</div><!-- end articleBanner -->
+						</div><!-- end col-md-12 -->
+					</div><!-- end row -->
+				</div><!-- end container -->
+			</div><!-- end articleBannerBG -->
+
+			<!--	Article Body	-->
+			<div class="container">	
+			
+				<!--	WHAT IT DOES	-->
+				<div class="row">
+					<div class="col-md-3">
+						<h1 class="articleSection"> WHAT IT DOES </h1>
+					</div>
+					
+					<div class="col-md-9">
+						<p class="paragraph"> The selfie app allows users to take a photo from the video stream and edit the 
+							photo using a drawing function, frames and filters. Once the user is done editing their photo they 
+							can upload it to a server.
+						</p>
+					</div>
+				</div><!--	end WHAT IT DOES	-->
+				
+				<!--	Dot Separator	-->
+				<div class="row">
+					<div class="col-md-7">
+					</div>
+					
+					<div class="col-md-1">
+						<div class="dot">
+						</div>
+						
+						<div class="dot">
+						</div>
+						
+						<div class="dot">
+						</div>
+					</div>
+					
+					<div class="col-md-4">
+					</div>
+				</div><!-- end Dot Separator -->
+				
+				<!--	HOW IT WORKS	-->
+				<div class="row">
+					<div class="col-md-3">
+						<h1 class="articleSection"> HOW IT WORKS </h1>
+					</div>
+					
+					<div class="col-md-9">
+						<p class="paragraph"> The application reads in a video stream from a video source which can be a 
+							laptop camera or a web camera. Once the video stream is connected, JavaScript functions get used 
+							to interact with the stream on button clicks. The snapshot function takes a still image from the 
+							video stream and stores that image in the ‘source’ canvas and the pixel canvas to be called upon 
+							later. To make a frame appear, click either frame button, which are both linked with a click event 
+							listener. The draw function sees which frame has been selected and the frame is pulled from the asset
+							manager cache and places the frame with the captured shot of the video stream into a canvas.
+							<br>
+							</br>
+							Similar to frames, an event listener is tied the filter buttons which when clicked 
+							will change the image to either invert or greyscale. The buttons for drawing in the 
+							canvas are put in an unordered list. Clicking on the draw or erase button will call 
+							a simple function that sets the stroke size and the strokes colour. When erase all 
+							is clicked, a clean source image over the altered image, erasing any drawings, 
+							filters or frames. The save button opens a new window and loads the data in the canvas
+							into the new window as a png image. 
+						</p>
+					</div>
+				</div><!-- end HOW IT WORKS -->
+				
+				<!--	Dot Separator	-->
+				<div class="row">
+					<div class="col-md-7">
+					</div>
+					
+					<div class="col-md-1">
+						<div class="dot">
+						</div>
+						
+						<div class="dot">
+						</div>
+						
+						<div class="dot">
+						</div>
+					</div>
+					
+					<div class="col-md-4">
+					</div>
+				</div><!-- end Dot Separator -->
+				
+				<!--	WHAT I LEARNED	-->
+				<div class="row">
+					<div class="col-md-3">
+						<h1 class="articleSection"> WHAT I LEARNED </h1>
+					</div>
+					
+					<div class="col-md-9">
+						<p class="paragraph"> In the creation of this application, I learned how to use JavaScript and the 
+							HTML canvas to interact with a video stream from a camera. When the video stream is loaded into the 
+							canvas a button can be clicked to take a still image into another canvas which can be edited using 
+							filters and frames. A draw tool was created to allow users to draw, erase and change the colour and 
+							size of the drawing tool. I then created functions that allow the user to save their image to a new 
+							web browser or upload it to a server.
+						</p>
+					</div>
+				</div><!--	end WHAT I LEARNED	-->
+				
+				<!-- Thesis Download -->
+				<div class="row">
+					<div class="col-md-3">
+					</div>
+					<div class="col-md-9">
+						<p class="paragraph thesis"> TRY OUT THE DEMO <a href="./documents/Selfie/index.html" target="_blank">HERE</a>
+						</p>
+					</div>
+				</div><!-- end thesis download -->
+			</div><!-- end container -->
+			
+			<!--	Footer	-->
+			<div class="footer">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-3">
+							<h1 class="backToMain"><span class="backUnderline"><a href="index.html#portfolioPage"><img src="./images/arrows.png" class="arrow"> BACK TO MAIN </a></span></h1>
+						</div>
+					</div><!-- end row -->
+				</div><!-- end container -->		
+			</div><!-- end Footer -->
+		</div><!-- end article page -->
+	</body>
+</html>

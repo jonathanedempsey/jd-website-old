@@ -1,0 +1,691 @@
+/******************
+	CSS RESET
+******************/
+html, body, address, blockquote, div, dl, form, h1, h2, h3, h4, h5, h6, ol, p, pre, table, ul,
+dd, dt, li, tbody, td, tfoot, th, thead, tr, button, del, ins, map, object,
+a, abbr, acronym, b, bdo, big, br, cite, code, dfn, em, i, img, kbd, q, samp, small, span,
+strong, sub, sup, tt, var, legend, fieldset {
+	margin: 0;
+	padding: 0;
+}
+
+/************************************
+		FONT FACES
+************************************/
+
+@font-face {
+    font-family: 'Roboto Black';
+    src: url('../fonts/Roboto-Black-webfont.eot');
+    src: url('../fonts/Roboto-Black-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/Roboto-Black-webfont.woff') format('woff'),
+         url('../fonts/Roboto-Black-webfont.ttf') format('truetype'),
+         url('../fonts/Roboto-Black-webfont.svg#RobotoMediumItalic') format('svg');
+}
+
+@font-face {
+    font-family: 'Roboto Medium';
+    src: url('../fonts/Roboto-Medium-webfont.eot');
+    src: url('../fonts/Roboto-Medium-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/Roboto-Medium-webfont.woff') format('woff'),
+         url('../fonts/Roboto-Medium-webfont.ttf') format('truetype'),
+         url('../fonts/Roboto-Medium-webfont.svg#RobotoMedium') format('svg');
+}
+
+@font-face {
+    font-family: 'Roboto Bold';
+    src: url('../fonts/Roboto-Bold-webfont.eot');
+    src: url('../fonts/Roboto-Bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/Roboto-Bold-webfont.woff') format('woff'),
+         url('../fonts/Roboto-Bold-webfont.ttf') format('truetype'),
+         url('../fonts/Roboto-Bold-webfont.svg#RobotoMedium') format('svg');
+}
+
+@font-face {
+    font-family: 'Roboto Light';
+    src: url('../fonts/Roboto-Light-webfont.eot');
+    src: url('../fonts/Roboto-Light-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/Roboto-Light-webfont.woff') format('woff'),
+         url('../fonts/Roboto-Light-webfont.ttf') format('truetype'),
+         url('../fonts/Roboto-Light-webfont.svg#RobotoLight') format('svg');
+}
+
+@font-face {
+    font-family: 'Lora Italic';
+    src: url('../fonts/lora-italic-webfont.eot');
+    src: url('../fonts/lora-italic-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/lora-italic-webfont.woff') format('woff'),
+         url('../fonts/lora-italic-webfont.ttf') format('truetype'),
+         url('../fonts/lora-italic-webfont.svg#RobotoLight') format('svg');
+}
+
+@font-face {
+    font-family: 'Lora Bold Italic';
+    src: url('../fonts/lora-bolditalic-webfontt.eot');
+    src: url('../fonts/lora-bolditalic-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/lora-bolditalic-webfont.woff') format('woff'),
+         url('../fonts/lora-bolditalic-webfont.ttf') format('truetype'),
+         url('../fonts/lora-bolditalic-webfont.svg#RobotoLight') format('svg');
+}
+
+
+/************************************
+		LANDING PAGE
+************************************/
+
+.credit{
+	font-family: Lora Italic;
+	color: white;
+	text-align: right;
+	font-size: 12px;
+}
+
+#landingPage{
+	background-image: url("../images/backgroundImages/landingPageBg.png");
+	background-size: cover;
+	background-repeat: no-repeat;
+	height: 100vh;
+}
+
+.centerPage {
+	margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+}
+
+#landingPageTitle{
+	font-family: Roboto Black;
+	text-align: center;
+	color: white;
+	font-size: 70px;
+	margin: auto;
+}
+
+#landingPageSubtitle{
+	font-family: Lora Italic;
+	text-align: center;
+	color: white;
+	font-size: 25px;
+	margin: auto;
+}
+
+
+/************************************
+		NAVBAR
+************************************/
+
+.custom-sticky-nav{
+	width:100%; 
+	bottom:0px;
+	margin-top:-75px;	
+}
+
+#landingLogo{
+	display: show;
+}
+
+#landingText{
+	display: none;
+}
+
+#navbar-main{
+	font-family: Roboto Black;
+
+}
+
+.navbar{
+	font-size: 15px;
+	height: 75px;
+	margin-bottom: 0px;
+}
+
+#navbar{
+	width: 33%;
+	margin: 0 auto;
+	margin-top: 13px;
+}
+
+.logo {
+	width: 40px;
+	height: 50px;
+	margin-top: -15px;
+	margin-bottom: -5px;
+}
+
+.navbar-inverse{
+	border-radius: 0px;
+	border: 0px;
+	background-color: #111111;
+	background-color: rgba(0,0,0,0.8);
+}
+
+.navbar-nav{
+	display: inline-block;
+	float: none;
+	vertical-align: top;
+}
+
+.custom-nav {
+	text-align: center;
+	width: 100%;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+}
+
+.navbar-inverse .navbar-nav>li>a{
+	color: white;
+}
+
+.navbar-inverse .navbar-nav>li>a:hover{
+	border-bottom: 2px solid #1f68ed;
+}
+
+.custom-nav-item {
+	text-align: center;
+	-webkit-box-flex: 1;
+	-webkit-flex: 1;
+	-ms-flex: 1;
+	flex: 1;
+}
+
+
+/************************************
+		PORTFOLIO PAGE
+************************************/
+
+#portfolioPageTitle {
+	font-family: Roboto Black;
+	text-align: left;
+	color: black;
+	font-size: 65px;
+	margin-top: 80px;
+	margin-bottom: 5px;
+}
+
+#portfolioPage{
+	height: 105vh;
+	background-color: white;
+	background-image: url("../images/backgroundImages/PortfolioTileBG.png");
+}
+
+.gallery-cell {
+	width: 95vh;
+	height: 70vh;
+	margin: 0 5px 0 5px;
+	/*background-color: black;*/
+	counter-increment: gallery-cell;
+}
+
+.projectsGroup{
+	width: 95vh;
+	height: 69vh;
+}
+
+/* 1 Top 2 Bottom */
+
+.projectBigTop{
+	position:relative;
+	width: 100%;
+	height: 55%;
+	margin: 0 5px 5px 0;
+	background-color: blue;
+}
+
+.projectSmallOneBottom{
+	position:relative;
+	width: 49%;
+	height: 43%;
+	margin: 5px 0 0 0;
+	float: left;
+	background-color: pink;
+}
+
+.projectSmallTwoBottom{
+	position:relative;
+	width: 49%;
+	height: 43%;
+	margin: 5px 0 0 0;
+	float: right;
+	background-color: green;
+}
+
+/* 2 Top 1 Bottom */
+
+.projectBigBottom{
+	position:relative;
+	background-color: blue;
+	width: 100%;
+	height: 55%;
+	margin: 0 0 0 0 0;
+	clear: both;
+}
+
+.projectSmallOneTop{
+	position:relative;
+	width: 49%;
+	height: 43%;
+	margin: 0 0 10px 0;
+	float: left;
+	clear: both;
+	background-color: green;
+}
+
+.projectSmallTwoTop{
+	position:relative;
+	width: 49%;
+	height: 43%;
+	margin: 0 0 10px 0;
+	float: right;
+	background-color: pink;
+}
+
+/* Titles & Subtitles */
+
+.projectTitleBG {
+	background-color: rgba(0,0,0,0.9);
+	position:absolute;
+	border-bottom: 3px solid #1f68ed;
+	width: 100%;
+	bottom:0;
+	left:0;
+}
+
+.projectTitleBGSmall {
+	background-color: rgba(0,0,0,0.9);
+	position:absolute;
+	border-bottom: 2.5px solid #1f68ed;
+	width: 100%;
+	bottom:0;
+	left:0;
+}
+
+.projectTitleBG:hover { 
+	background-color: rgba(31,104,237,0.9);
+}
+
+.projectTitleBGSmall:hover { 
+	background-color: rgba(31,104,237,0.9);
+}
+
+.projectTitleBG a { 
+	text-decoration: none;
+}
+
+.projectTitleBGSmall a { 
+	text-decoration: none;
+}
+
+.projectTitleBig {
+	font-family: Roboto Black;
+	text-align: left;
+	color: white;
+	font-size: 28px;
+	margin: 5px 0 2.5px 10px;
+}
+
+.projectSubTitleBig {
+	font-family: Lora Italic;
+	text-align: left;
+	color: white;
+	font-size: 18px;
+	margin: 2.5px 0 5px 10px;
+}
+
+.projectTitleSmall {
+	font-family: Roboto Black;
+	text-align: left;
+	color: white;
+	font-size: 18px;
+	margin: 5px 0 2px 15px;
+}
+
+.projectSubTitleSmall {
+	font-family: Lora Italic;
+	text-align: left;
+	color: white;
+	font-size: 15px;
+	margin: 2px 0 5px 15px;
+}
+
+/* Project Images */
+.censusIreland {
+	background-image: url("../images/projectImages/Project01.png");
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+.photoGallery {
+	background-image: url("../images/projectImages/Project02.png");
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+.valkyrie {
+	background-image: url("../images/projectImages/Project03.png");
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+.selfieApp {
+	background-image: url("../images/projectImages/Project05.png");
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+.keepThemSafe {
+	background-image: url("../images/projectImages/Project04.png");
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+.bootstrapNewspaper {
+	background-image: url("../images/projectImages/Project10.png");
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+.significanceTesting {
+	background-image: url("../images/projectImages/Project08.png");
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+.prototypingUA {
+	background-image: url("../images/projectImages/Project09.png");
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+.deforestation {
+	background-image: url("../images/projectImages/Project07.png");
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+.locomotive {
+	background-image: url("../images/projectImages/Project06.png");
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+.restfulAPI {
+	background-image: url("../images/projectImages/Project11.png");
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+.hidden {
+	display: hidden;
+}
+
+/************************************
+		ABOUT PAGE
+************************************/
+
+#aboutPageTitle {
+	font-family: Roboto Black;
+	text-align: left;
+	color: white;
+	font-size: 65px;
+	margin-top: 80px;
+	margin-bottom: 10px;
+}
+
+#aboutPage{
+	background-image: url("../images/backgroundImages/aboutMeBackground.png");
+}
+
+.profiler{
+	margin-top: 5px;
+	width: 310px;
+	height: 310px;
+	background-image: url("../images/profile3.png");
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+.profileBG{
+	background-color: rgba(0,0,0,0.8);
+	border-bottom: 2px solid #1f68ed;
+	width: 310px;
+	position:absolute;
+	bottom:0;
+	left:10;
+}
+
+.aboutMeName{
+	font-family: Roboto Black;
+	font-size: 18px;
+	color: white;
+	text-align: left;
+	margin: 8px 0 2.5px 8px;
+}
+
+.aboutMeProf {
+	font-family: Lora Italic;
+	font-size: 15px;
+	color: white;
+	text-align: left;
+	margin: 2.5px 0 5px 8px;
+}
+
+.aboutMeParagraph{
+	font-family: Roboto Light;
+	font-size: 20px;
+	color: white;
+}
+
+.Bold {
+	font-family: Roboto Black;
+}
+
+.contactTitle {
+	font-family: Roboto Black;
+	font-size: 60px;
+	color: white;
+	margin: 30px 0px 10px 0px;
+}
+
+.contactSubTitle {
+	font-family: Lora Italic;
+	font-size: 24px;
+	color: white;
+	margin-bottom: 15px;
+}
+
+.contactSubTitle2 {
+	font-family: Lora Italic;
+	font-size: 25px;
+	margin-top: 5px;
+	margin-bottom: 40px;
+}
+
+.contactSubTitle2 a {
+	color: white;
+}
+
+.contactSubTitle a { 
+	color: white;
+}
+
+.contactCV{ 
+	font-family: Lora Italic;
+	font-size: 24px;
+	color: white;
+	margin-bottom: 85px;
+}
+
+.contactCV a { 
+	color: white;
+}
+
+.techImg{
+	width: 25px;
+	height: 25px;
+	margin: 0 5px 5px 0;
+}
+
+/************************************
+		Media Queries
+************************************/
+
+@media screen and (max-width: 990px) {
+
+	/* Landing */
+	#landingPageTitle{
+		font-size: 60px;
+	}
+	
+	#landingPageSubtitle{
+		font-size: 25px;
+	}
+
+	/* Portfolio */
+	#portfolioPage{
+		height: 110vh;
+	}	
+	
+	#portfolioPageTitle {
+		font-size: 60px;
+	}
+	
+	/* About */
+	.profiler{
+		margin-left: auto;
+		margin-right: auto;
+	}
+}
+
+@media screen and (max-width: 650px) {
+
+	/* Landing */
+	#landingPageTitle{
+		font-size: 55px;
+	}
+	
+	#landingPageSubtitle{
+		font-size: 22px;
+	}
+
+	/* Nav */
+	.custom-sticky-nav{
+		margin-top:-50px;	
+	}
+
+	.navbar{
+		font-size: 17px;
+		height: 50px;
+	}
+	
+	#landingLogo{
+		display: none;
+	}
+
+	#landingText{
+		display: initial;
+	}
+
+	/* Portfolio */
+	#portfolioPageTitle {
+		font-size: 55px;
+		margin-top: 50px;
+	}
+
+	.projectTitleBig {
+		font-size: 23px;
+		margin: 5px 0 2.5px 8px;
+	}
+
+	.projectSubTitleBig {
+		font-size: 14px;
+		margin: 2.5px 0 5px 8px;
+	}
+
+	.projectTitleSmall {
+		font-size: 16px;
+		margin: 5px 0 2px 8px;
+	}
+
+	.projectSubTitleSmall {
+		font-size: 14px;
+		margin: 2px 0 5px 8px;
+	}
+
+	/* About */
+	.aboutMeParagraph{
+		margin: 10px 0 0 0;
+	}
+}
+
+
+@media screen and (max-width: 480px) {
+
+	/* Landing */
+	#landingPageTitle{
+		font-size: 31px;
+	}
+	
+	#landingPageSubtitle{
+		font-size: 20px;
+	}
+
+	/* Portfolio */	
+	#portfolioPageTitle {
+		font-size: 30px;
+	}
+
+	/* About */
+	#aboutPageTitle {
+		text-align: center;
+		font-size: 30px;
+	}
+	
+	.aboutMeName{
+		font-size: 16px;
+	}
+
+	.aboutMeProf {
+		font-size: 14px;
+	}
+
+	.aboutMeParagraph{
+		font-size: 18px;
+	}
+	
+	.contactTitle {
+		font-size: 30px;
+	}
+	
+	.contactSubTitle {
+		font-size: 16px;
+	}
+
+	.contactSubTitle2 {
+		font-size: 16px;
+		margin-bottom: 40px;
+	}
+	
+	.contactCV{ 
+		font-size: 16px;
+	}
+	
+	.techImg{
+		width: 20px;
+		height: 20px;
+		margin: 0 5px 5px 0;
+	}
+
+	.profiler {
+		width:240px;
+		height:240px;
+		background-image: url("../images/profile3_small.png");
+	}
+
+	.profileBG {
+		width: 240px;
+	}
+}

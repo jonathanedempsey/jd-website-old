@@ -1,0 +1,365 @@
+/******************
+	CSS RESET
+******************/
+html, body, address, blockquote, div, dl, form, h1, h2, h3, h4, h5, h6, ol, p, pre, table, ul,
+dd, dt, li, tbody, td, tfoot, th, thead, tr, button, del, ins, map, object,
+a, abbr, acronym, b, bdo, big, br, cite, code, dfn, em, i, img, kbd, q, samp, small, span,
+strong, sub, sup, tt, var, legend, fieldset {
+ margin: 0;
+ padding: 0;
+}
+
+/******************
+	MAIN TEXT
+******************/
+@font-face{
+	font-family: 'Warnock Pro';
+	src: url('../fonts/Warnock Pro Regular.otf');
+}
+
+@font-face{
+	font-family: 'Warnock Pro Light Italic';
+	src: url('../fonts/Warnock Pro Light Italic.ttf');
+}
+
+@font-face{
+	font-family: 'Warnock Pro Italic';
+	src: url('../fonts/Warnock-Pro-Italic.ttf');
+}
+
+@font-face{
+	font-family: 'Warnock Pro Bold';
+	src: url('../fonts/Warnock Pro Bold.ttf');
+}
+
+@font-face{
+	font-family: 'Warnock Pro Bold Italic';
+	src: url('../fonts/Warnock Pro Bold Italic.ttf');
+}
+
+.MainStoryHeadline a:hover, .TopStoriesHeadline:hover, .TopicStoriesHeadlineTop:hover, .LatestStoriesHeadline:hover, .TopicStoriesHeadline:hover {
+    color: #949494;
+} 
+
+.container{
+	font-family: 'Warnock Pro'; 
+}
+
+/******************
+	TITLE W/ UNDERLINE
+******************/
+.Title {
+	font-size: 89px;
+	margin-top: -89px;
+	text-align: center;
+	background-color: white;
+}
+
+.Underline{
+	margin-top: 110px;
+	border-bottom: 3px solid black;
+}
+
+/******************
+	NAVIGATION WITH UNDERLINE
+******************/
+.NavUnderline{
+	margin-top: -13px;
+	border-bottom: 1px solid #dddddd;
+}
+
+.navbar{
+	font-size: 18px;
+	margin: 0;
+	margin-top: -10px;
+    padding: 0;
+	list-style-type: none;	
+}
+
+.navbar li{
+	margin-right: 40px;
+	display: inline;
+}
+
+.navbar a {
+    color: #323232;
+    text-decoration: none;
+}
+
+.navbar a:hover {
+    color: #a8a8a8;
+} 
+
+#navDate {
+	text-align: right;
+	color: #353535;
+}
+
+/******************
+	MAIN STORY & TOP STORIES
+******************/
+
+.HeadlineTopStories {
+	margin-top: 22px;
+}
+
+.MainStoryHeadline {
+	font-size: 55px;
+}
+
+.MainStoryHeadline a{
+	text-decoration: none;
+	color: #222222;
+}
+
+.MainStoryLead {
+	font-size: 20px;
+	line-height: 26px;
+	margin-top: 10px;
+}
+
+.MainStoryRMore  a{
+	font-size: 17px;
+	font-family: 'Warnock Pro Italic';
+	color: #949494;
+}
+
+.MainStoryRMore {
+	margin-top: 10px;
+}
+
+.MainStoryAuthor {
+	font-size: 18px;
+	margin-top: 22px;
+	color: black;
+	font-family: 'Warnock Pro Bold';
+}
+
+.MainStoryDate {
+	font-size: 17px;
+	color: #949494;
+}
+
+.TopStories {
+	/*background-color: #F7F6F6;*/
+	width: 375px;
+}
+
+.TopStoriesTitle {
+	font-size: 22px;
+	margin-top: -37px;
+	text-align: center;
+	color: #0e0e0e;
+	background-color: white;
+	font-family: 'Warnock Pro Bold';
+}
+
+.TopStoriesUnderline {
+	margin-top: 18px;
+	border-bottom: 2px solid black;
+}
+
+.TopStoriesHeadline {
+	font-size: 27px;
+	margin-top: 10px;
+	font-family: 'Warnock Pro Italic';
+	color: #4c4c4c;
+}
+
+.TopStoriesAuthor {
+	font-size: 16px;
+	margin-top: 10px;
+	color: black;
+	font-family: 'Warnock Pro Bold';
+}
+
+.TopStoriesDate {
+	font-size: 14px;
+	margin-top: -3px;
+	margin-bottom: 20px;
+	color: #949494;
+}
+
+/******************
+	LATEST STORIES
+******************/
+.LatestStories {
+	margin-top: 40px;
+	margin-bottom: 15px;
+} 
+
+.LatestStoriesTitle {
+	font-size: 22px;
+	margin-top: -37px;
+	margin-left: 70px;
+	width: 210px;
+	text-align: center;
+	color: #0e0e0e;
+	background-color: white;
+	font-family: 'Warnock Pro Bold';
+}
+
+.LatestStoriesUnderline {
+	margin-top: 18px;
+	border-bottom: 2px solid black;
+}
+
+.LatestStoriesHeadline{
+	font-size: 27px;
+	font-family: 'Warnock Pro Italic';
+	color: #4c4c4c;
+}
+
+.LatestStoriesAuthor{
+	font-size: 16px;
+	padding-top: 10px;
+	color: black;
+}
+
+.LatestStoriesDate {
+	font-size: 14px;
+	margin-top: -2px;
+	margin-bottom: 20px;
+	color: #828282;
+}
+
+.LatestStoriesArticles {
+	/border-bottom: 1px solid #dddddd;
+	/padding-bottom: 10px;
+}
+
+/******************
+	TOPIC STORIES
+******************/
+
+.SportsStoriesTitle {
+	font-size: 22px;
+	margin-top: -37px;
+	margin-left: 25px;
+	width: 105px;
+	text-align: center;
+	color: #0e0e0e;
+	background-color: white;
+	font-family: 'Warnock Pro Bold';
+}
+
+.BusinessStoriesTitle {
+	font-size: 22px;
+	margin-top: -37px;
+	margin-left: 15px;
+	width: 120px;
+	text-align: center;
+	color: #0e0e0e;
+	background-color: white;
+	font-family: 'Warnock Pro Bold';
+}
+
+.OpinionStoriesTitle {
+	font-size: 22px;
+	margin-top: -37px;
+	margin-left: 17.5px;
+	width: 110px;
+	text-align: center;
+	color: #0e0e0e;
+	background-color: white;
+	font-family: 'Warnock Pro Bold';
+}
+
+.LAndSStoriesTitle {
+	font-size: 22px;
+	margin-top: -37px;
+	margin-left: -5px;
+	width: 160px;
+	text-align: center;
+	color: #0e0e0e;
+	background-color: white;
+	font-family: 'Warnock Pro Bold';
+}
+
+.CultureStoriesTitle {
+	font-size: 22px;
+	margin-top: -37px;
+	margin-left: 15px;
+	width: 120px;
+	text-align: center;
+	color: #0e0e0e;
+	background-color: white;
+	font-family: 'Warnock Pro Bold';
+}
+
+.MoreStoriesTitle {
+	font-size: 22px;
+	margin-top: -37px;
+	margin-left: 32.5px;
+	width: 85px;
+	text-align: center;
+	color: #0e0e0e;
+	background-color: white;
+	font-family: 'Warnock Pro Bold';
+}
+
+.TopicStories {
+	/*background-color: #F7F6F6;*/
+	margin-top: 15px;
+}
+.TopicStoriesUnderline {
+	margin-top: 18px;
+	border-bottom: 1px solid black;
+}
+
+.TopicRow {
+	margin-top: 30px;
+	margin-bottom: 10px;
+}
+
+.TopicStoriesHeadline {
+	font-size: 27px;
+	padding-top: 30px;
+	color: #4c4c4c;
+}
+
+.TopicStoriesAuthor {
+	font-size: 16px;
+	padding-top: 10px;
+	color: black;
+	font-family: 'Warnock Pro Bold';
+}
+
+.TopicStoriesDate {
+	font-size: 14px;
+	font-family: 'Warnock Pro Italic';
+	margin-top: -3px;
+	padding-bottom: 30px;
+	border-bottom: 1px solid #dddddd;
+	color: #828282;
+}
+
+.TopicStoriesHeadlineTop {
+	font-size: 27px;
+	color: #4a4a4a;
+}
+
+.TopicStoriesDateLast {
+	font-size: 14px;
+	font-family: 'Warnock Pro Italic';
+	margin-top: -3px;
+	padding-bottom: 30px;
+	color: #828282;
+}
+
+.MoreArticles {
+	margin-top: 20px;
+	margin-bottom: 30px;
+	font-family: 'Warnock Pro Italic';
+	font-size: 22px;
+}
+
+.MoreArticles  a{
+	color: #636363;
+	
+}
+
+.MoreArticles  a:hover {
+	color: #949494;
+}
+

@@ -1,0 +1,228 @@
+/******************
+	CSS RESET
+******************/
+html, body, address, blockquote, div, dl, form, h1, h2, h3, h4, h5, h6, ol, p, pre, table, ul,
+dd, dt, li, tbody, td, tfoot, th, thead, tr, button, del, ins, map, object,
+a, abbr, acronym, b, bdo, big, br, cite, code, dfn, em, i, img, kbd, q, samp, small, span,
+strong, sub, sup, tt, var, legend, fieldset {
+ margin: 0;
+ padding: 0;
+}
+
+/******************
+	MAIN TEXT
+******************/
+@font-face{
+	font-family: 'Warnock Pro';
+	src: url('../fonts/Warnock Pro Regular.otf');
+}
+
+@font-face{
+	font-family: 'Warnock Pro Light Italic';
+	src: url('../fonts/Warnock Pro Light Italic.ttf');
+}
+
+@font-face{
+	font-family: 'Warnock Pro Italic';
+	src: url('../fonts/Warnock-Pro-Italic.ttf');
+}
+
+@font-face{
+	font-family: 'Warnock Pro Bold';
+	src: url('../fonts/Warnock Pro Bold.ttf');
+}
+
+@font-face{
+	font-family: 'Warnock Pro Bold Italic';
+	src: url('../fonts/Warnock Pro Bold Italic.ttf');
+}
+
+.container{
+	font-family: 'Warnock Pro'; 
+}
+
+.TopStoriesHeadline:hover, .TopicStoriesHeadlineTop:hover, .LatestStoriesHeadline:hover, .TopicStoriesHeadline:hover {
+    color: #949494;
+} 
+
+/******************
+	TITLE W/ UNDERLINE
+******************/
+.Title {
+	font-size: 89px;
+	margin-top: -89px;
+	text-align: center;
+	background-color: white;
+}
+
+.Underline{
+	margin-top: 110px;
+	border-bottom: 3px solid black;
+}
+
+/******************
+	NAVIGATION WITH UNDERLINE
+******************/
+.NavUnderline{
+	margin-top: -13px;
+	border-bottom: 1px solid #dddddd;
+}
+
+.navbar{
+	font-size: 18px;
+	margin: 0;
+	margin-top: -10px;
+    padding: 0;
+	list-style-type: none;	
+}
+
+.navbar li{
+	margin-right: 40px;
+	display: inline;
+}
+
+.navbar a {
+    color: #323232;
+    text-decoration: none;
+}
+
+.navbar a:hover {
+    color: #a8a8a8;
+} 
+
+#navDate {
+	text-align: right;
+	color: #353535;
+}
+
+/******************
+	MAIN STORY
+******************/
+
+.HeadlineTopStories {
+	margin-top: 20px;
+}
+
+.MainStoryHeadline {
+	font-size: 55px;
+}
+
+.MainStoryParagraph{
+	font-size: 18px;
+	line-height: 26px;
+	margin-top: 20px;
+}
+
+/******************
+	TOP STORIES
+******************/
+
+.TopStoriesTitle {
+	font-size: 22px;
+	margin-top: -37px;
+	text-align: center;
+	font-family: 'Warnock Pro Bold';
+	color: #0e0e0e;
+	background-color: white;
+}
+
+.RelatedStoriesTitle {
+	font-size: 22px;
+	margin-top: -37px;
+	margin-left: -25px;
+	text-align: center;
+	width: 215px;
+	font-family: 'Warnock Pro Bold';
+	color: #0e0e0e;
+	background-color: white;
+}
+
+.LatestStoriesTitle {
+	font-size: 22px;
+	margin-top: -37px;
+	margin-left: -10px;
+	text-align: center;
+	width: 200px;
+	font-family: 'Warnock Pro Bold';
+	color: #0e0e0e;
+	background-color: white;
+}
+
+.TopStoriesUnderline {
+	margin-top: 18px;
+	border-bottom: 2px solid black;
+}
+
+.TopStoriesHeadline {
+	font-size: 27px;
+	margin-top: 10px;
+	font-family: 'Warnock Pro Italic';
+	color: #4c4c4c;
+}
+
+.TopStoriesAuthor {
+	font-size: 16px;
+	margin-top: 10px;
+	font-family: 'Warnock Pro Bold';
+	color: black;
+}
+
+.TopStoriesDate {
+	font-size: 14px;
+	margin-top: -3px;
+	margin-bottom: 20px;
+	color: #949494;
+}
+
+/************************************
+			ARTICLE PAGE
+************************************/
+
+.firstcharacter { 
+	float: left; 
+	font-size: 100px; 
+	line-height: 40px;
+	margin-top: 30px;
+	padding-right: 7px;
+	padding-bottom: 7px;
+	color: #121212;
+}
+
+.normalParagraph{
+	font-size: 18px;
+	line-height: 26px;
+}
+
+.SixSix {
+	float: right;
+	margin-left: 5px;
+	margin-top: -25px;
+	font-size: 100px; 
+	font-family: Warnock Pro Light Italic;
+	color: #121212;
+}
+
+.NineNine {
+	float: right;
+	font-size: 100px;
+	font-family: Warnock Pro Light Italic;
+	padding-top: 75px;
+	margin-right: 89px;
+	color: #121212;
+}
+
+.Quote {
+	text-align: justify;
+	hyphens: auto;
+	line-height: 30px;
+	font-size: 25px;
+	font-family: Warnock Pro Light Italic;
+}
+
+.QuoteGuy{
+	margin-top: 20px;
+	font-size: 19px;
+	color: black;
+	font-family: 'Warnock Pro Bold Italic';
+}
+

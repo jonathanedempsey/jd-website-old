@@ -1,0 +1,64 @@
+/******************
+	CSS RESET
+******************/
+html, body, address, blockquote, div, dl, form, h1, h2, h3, h4, h5, h6, ol, p, pre, table, ul,
+dd, dt, li, tbody, td, tfoot, th, thead, tr, button, del, ins, map, object,
+a, abbr, acronym, b, bdo, big, br, cite, code, dfn, em, i, img, kbd, q, samp, small, span,
+strong, sub, sup, tt, var, legend, fieldset {
+ margin: 0;
+ padding: 0;
+}
+
+@font-face{
+	font-family: 'ADAM.CG PRO';
+	src: url('../fonts/ADAM.CG PRO.otf');
+}
+
+html {
+	background-image: url("../images/PolygonalBackground.jpg");
+	font-family: 'ADAM.CG PRO';
+}
+
+.nav{
+	padding-right: 10px;
+	padding-bottom: 10px;
+}
+
+.navbar {
+	width: 960px;
+	margin-top: 20px;
+	font-size: 16px;
+	text-align: center;
+	list-style-type: none;
+	margin-left: auto;
+    margin-right: auto;
+}
+
+.navbar li{
+	margin-bottom: 10px;
+	display: inline;
+	text-align: center;
+}
+
+.navbar  a{
+	text-decoration: none;
+	font-size: 16px;
+	color: #141414;
+}
+
+.navbar  a:hover{
+	text-decoration: underline;
+}
+
+.image{
+	padding-right: 10px;
+	padding-top: 10px;
+}
+
+.tableauPlaceholder {
+	display: block;
+	margin-top: 40px;
+    margin-left: auto;
+    margin-right: auto;
+}
+

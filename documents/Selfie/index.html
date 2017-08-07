@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html>
+	<head>	 
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="chrome=1" />
+		<base target="_blank">
+		<script src="./js/upload.js"></script>		 				 <!-- Links to upload.js -->
+		<script src="./js/assetManager.js"></script> 				 <!-- Links to assetManager.js -->
+		<script type="text/javascript" src="./js/filter.js"></script><!-- Links to filter.js -->		
+		<link rel="stylesheet" type="text/css" href="mystyle.css" /> <!-- Links to mystyle.css -->
+		<title>Multimedia Programming CA - Selfie App</title>
+	</head>
+	<body>
+		<div id ="topWrapper">
+			<h1>Selfie App</h1>
+		</div>
+		<div id ="wrap">	
+			<!-- Video -->
+			<h2 id="cameraFeedHeader">Camera Feed</h2>
+			<video autoplay></video>
+			<p>
+				<button id="btnCapture">Capture Photo!</button>
+			</p> 
+			
+			<!-- Image Canvas -->	
+			<h2 id="photoEditorHeader">Photo Editor</h2>
+			<canvas id="canvas" width=640 height=480></canvas>
+	 
+			 <!-- Frame Buttons -->
+			 <div id="frameContent">			
+				<h3 id ="framesHeader">Frames</h3>
+				<p>
+					<button id="btnFrameNeg">Negative Frame</button>
+					<button id="btnFramePol">Polaroid Frame</button>
+					<button id="btnNoFrame">None</button>
+				</p>
+			</div>
+
+			<!-- Filter Buttons -->
+			<div id="filterContent">				
+				<h3 id="filterHeader">Filters</h3>
+				<p>
+					<button id="btnInvert">Invert</button>
+					<button id="btnGrayScale">GrayScale</button>
+					<button id="btnNoFilter">None</button>
+				</p>
+			</div>
+			
+			<!-- Paint Buttons -->
+			<div id="menuContent">
+				<h3 id="paintHeader">Paint</h3>
+				<ul id="menu">
+					<li><a class="button" btn-action="Draw">Draw</a></li>
+					<li><a class="button" btn-action="Erase">Erase</a></li>
+					<li><a class="button" btn-action="EraseAll">Erase All</a></li>
+					<li><a class="button" btn-action="Save">Save</a></li>
+					<li><input type='range'  id='strokeSize' step="1" min="1" max="10" title="stroke Size"  value="1"/>Stroke Size</li>
+					<li><input type='color' id='strokecolor' / value="#ffffff"/>Stroke Colour</li>
+				</ul>
+			</div>
+
+			<!-- Upload -->
+			<h3 id="uploadHeader">Upload</h3>
+			<button id="btnUpload">Upload</button>
+			
+			<!-- Hidden form to upload image data-->
+			<form method="post" accept-charset="utf-8" name="form1">
+				<input name="hidden_imgData" id='hidden_imgData' type="hidden"/>
+				<input name="hidden_studentData" id='hidden_studentData' type="hidden"/>
+			</form>
+			<!--Hidden form end -->
+		</div>
+	</body>
+	<script type="text/javascript">
+	
+		//Asset manager loads images
+		var ASSET_MANAGER = new AssetManager();
+		ASSET_MANAGER.queueDownload('img\\polaroid.png');
+		ASSET_MANAGER.queueDownload('img\\negative.png');
+		ASSET_MANAGER.downloadAll(init);
+		
+		//Variables for paint function
+		var strokeSize = 3;
+		var strokeColor = '#999999';
+		var fillColor = '#ffffff';
+		var bgColor = '#FFFFFF';
+		var mouse = {};
+
+		//canvas context
+		var context = canvas.getContext("2d");
+		
+		//Filter global variable
+		var whichFilter ="none";
+		var pixelCan, pixelCtx;
+		
+		//Draw background function
+		function drawBg(context) {
+		  context.drawImage(pixelCan, 0, 0);
+		}
+		
+		//INIT
+		function init(){
+			var video = document.querySelector('video');
+			var canvas = document.getElementsByTagName("canvas");
+			var localMediaStream = null;
+			var imgData, newImgData;
+			var source, output;
+			source = canvas[0].getContext('2d');
+			
+			//canvas to store original image
+			pixelCan = document.createElement("canvas");
+			pixelCan.width = 640;
+			pixelCan.height = 480;
+			pixelCtx = pixelCan.getContext('2d');
+	   
+			//Event Listeners for buttons
+			nav = new Menu(document.getElementById('menu'));
+			document.getElementById("btnUpload").addEventListener("click", upload, false);
+			document.getElementById("btnCapture").addEventListener("click", snapshot, false);
+			document.getElementById("btnFrameNeg").addEventListener("click", function() {
+							whichFrame ="negative";
+							draw();
+							}, false
+						);
+			document.getElementById("btnNoFrame").addEventListener("click", function() {
+						whichFrame ="none"
+						draw();
+					}, false
+			);	
+			document.getElementById("btnFramePol").addEventListener("click", function() {
+							whichFrame ="polaroid";
+							draw();
+							}, false
+			);
+			document.getElementById("btnInvert").addEventListener("click", function() {
+							whichFilter ="inv"
+							draw();
+						}, false
+			); 
+			document.getElementById("btnNoFilter").addEventListener("click", function() {
+							whichFilter ="none"
+							draw();
+						}, false
+			);	 
+			document.getElementById("btnGrayScale").addEventListener("click", function() {
+						whichFilter ="gs"
+						draw();
+					}, false
+			);	
+	
+			
+			//Puts video image into canvas
+			function snapshot() {
+				if (localMediaStream) {
+					whichFrame = "none";
+					source.drawImage(video, 0, 0);
+					pixelCtx.drawImage(video, 0,0);
+				}
+			}
+			//Video to image event listener
+			video.addEventListener('click', snapshot, false);
+		 
+			// vendor prefixes for code that works cross-browser.
+			navigator.getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia;
+			 
+			//Sets video max width/height
+			var vgaConstraints  = {
+				video: {
+					mandatory: {
+					maxWidth: 640,
+					maxHeight: 480
+					}
+				}
+			};
+			 
+			//Gets video feed 
+			navigator.getUserMedia(vgaConstraints, function(stream) {
+				video.src = window.URL.createObjectURL(stream);
+				localMediaStream = stream;
+			}, errorCallback);
+			 
+			 
+			function errorCallback(e) {
+				console.log('trouble in paradise', e)  }
+			 
+			//Draws preset images
+			function draw() {		 
+				console.log("draw: "); 
+				source.drawImage(pixelCan, 0, 0);
+				
+				<!-- FILTERS -->
+				 switch(whichFilter) {
+				    case "inv":
+						console.log("invert filter");
+						source.putImageData(Filters.invertFilter(source), 0, 0);
+						break;
+					case "gs":
+						console.log("greyscale filter");
+						source.putImageData(Filters.grayScaleFilter(source), 0, 0);
+						break;
+						
+					default:
+						if (localMediaStream) {
+							//draws to canvas
+							source.drawImage(pixelCan, 0, 0);
+						}
+						break;
+				}
+				
+				<!-- FRAMES -->
+				switch (whichFrame) {
+						//Draws the negative frame
+						case "negative":
+						console.log("negative frame selected");
+						source.drawImage(ASSET_MANAGER.cache["img\\negative.png"],0,0);
+						break;
+						
+						//Draws the polaroid frame
+						case "polaroid":
+						console.log("polaroid frame selected");
+						source.drawImage(ASSET_MANAGER.cache["img\\polaroid.png"],0,0);
+						break;
+						
+						default:
+						console.log("no frame selected");
+						break;
+				}
+			}
+		}
+	  
+	    //Mouse Down
+		function onMouseDown (e) {
+			e = e || event;
+			mouse = getMouse(e);
+			//adding mouseMove EL
+			console.log("mouseDown Event");
+		
+			canvas.addEventListener('mousemove', onMouseMove, false);
+			context.lineWidth = strokeSize;
+			context.strokeStyle = strokeColor;
+			context.beginPath();
+			context.moveTo(mouse.x, mouse.y);
+		}
+
+		//Mouse Moving
+		function onMouseMove (e) {
+			//monitoring mouseClicks;
+			e = e || event;
+			console.log(e);
+			mouse = getMouse(e);
+			
+			context.lineWidth = strokeSize;
+			context.strokeStyle = strokeColor;
+			context.lineTo(mouse.x, mouse.y);
+			context.stroke();
+		}
+
+		//Get Mouse Position
+		function  getMouse(e) {
+			e = e || event;
+			var rect = this.canvas.getBoundingClientRect();
+				return {
+				  x: e.clientX - rect.left,
+				  y: e.clientY - rect.top
+				}
+		}
+		
+		//Menu event handling
+		function Menu(elem) {
+			var myCanvas = canvas;
+			
+			this.onDraw = function() {
+					console.log("drawing");
+						strokeSize -=  10;
+						strokeColor = '#999999';
+			};
+
+			this.onErase = function(){
+					console.log("erasing");
+						strokeSize +=  10;
+						strokeColor = bgColor;   
+			};
+				
+			this.onEraseAll = function(){
+					console.log("erasing All");
+					drawBg(context);
+			};
+			
+			this.onSave = function(){
+					console.log("saving canvas");
+					window.open(canvas.toDataURL("image/png"));
+			};
+
+			var self = this;
+
+			elem.onclick = function(e) {
+				var target = e && e.target || event.srcElement;
+				var action = target.getAttribute('btn-action');
+					if (action) {
+						self["on"+action]();
+					}
+					
+			elem.onchange = function(e) {
+					console.log("change event")
+				 	var target = e && e.target || event.srcElement;
+				   	//checking for strokeValue range Slider
+				   	if (target.id == "strokeSize")	{
+				   		console.log("clicked on strokeSize" );
+				   		console.log(target.value);
+				   		strokeSize = parseInt(target.value);
+				   	}
+
+					//checking for stroke colour
+				   	if (target.id == "strokecolor")	{
+				   		console.log("clicked on stroke color" );
+				   		strokeColor = target.value;
+				   		console.log(strokeColor);
+				   	}
+			   	}
+			}
+		}
+		
+		canvas.addEventListener('mousedown', onMouseDown, false);
+			  //removing mouseMove EL
+
+		canvas.addEventListener('mouseup', function () {
+				context.closePath();
+				canvas.removeEventListener('mousemove', onMouseMove, false);
+			 }, false);  
+	  
+	</script>
+</html>

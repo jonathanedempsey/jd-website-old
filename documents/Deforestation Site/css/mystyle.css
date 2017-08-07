@@ -1,0 +1,302 @@
+
+/* Header Area/Banner */
+
+#header{
+	background-image:url('../images/Header Banner 2.png');
+	background-repeat: no-repeat;
+	background-position:center;
+    margin: 0px 0px;
+    padding: 60px;
+	padding-top: 250px;
+    text-align: center;
+	min-width: 930px;
+}
+
+/* Navigation Bar */
+
+#navguide{
+	top: 200px;
+	width: 100%;
+	height: 55px;
+	text-align: center;
+	padding-left: 8px;
+	min-width: 930px;	
+}
+
+#navguide a {
+	font-size: 22px;
+	font-family: verdana;
+	padding-left: 15px;
+	padding-right: 15px;
+	color: #323232;
+	text-decoration: none;
+	min-width: 930px;	
+}
+
+#navguide a:hover {
+	color: black;
+} 
+
+/*Footer Nav */
+
+#navguide2{
+	width: 100%;
+	text-align: center;
+	padding-left: 8px;
+}
+
+#navguide2 a {
+	font-size: 14px;
+	font-family: verdana;
+	padding-left: 10px;
+	padding-right: 10px;
+	color: #323232;
+	text-decoration: none;
+}
+
+#navguide2 a:hover {
+	color: black;
+} 
+
+/* Body / Wrap */
+
+body{
+padding: 0;
+margin: 0;
+background-color: #FFFCCF;
+}
+
+.wraptop{
+background-color: #AFC065;
+margin: 0px auto;
+width:100%;
+text-align: center;
+}
+
+.wrap{
+margin: 0px auto;
+width:960px;
+padding: 10px;
+padding-top: 0px;
+text-align: center;
+}
+
+/* Paragraph DIVS / IDS */
+
+.content{
+width: 930px;
+margin: 0px auto;
+text-align: left;
+padding: 15px;
+padding-bottom: 25px;
+border-bottom: 2px solid #AFC065;
+font-family: verdana;
+}
+
+.content2{
+width: 930px;
+margin: 50px auto;
+text-align: left;
+padding: 15px;
+padding-top: 0px;
+padding-bottom: 30px;
+border-bottom: 2px solid #AFC065;
+font-family: verdana;
+}
+
+.about{
+height:450px;
+width: 400px;
+margin: 50px auto;
+margin-right: 19px;
+margin-left: 20px;
+text-align: center;
+padding: 15px;
+padding-top: 10px;
+margin-bottom: 50px;
+border: 2px solid #AFC065;
+border-radius: 10px;
+font-family: verdana;
+float: left;
+}
+
+.factpoints{
+width: 930px;
+margin: 0px auto;
+text-align: left;
+padding: 15px;
+padding-bottom: 25px;
+border-top: 2px solid #AFC065;
+border-bottom: 2px solid #AFC065;
+font-family: verdana;
+}
+
+#aboutp{
+width: 930px;
+margin: 50px auto;
+text-align: center;
+padding: 15px;
+padding-top: 0px;
+border-bottom: 2px solid #AFC065;
+font-family: verdana;
+}
+
+
+.paragraphpic{
+float:left;
+border: 2px solid #AFC065;
+margin-right:20px;
+}
+
+
+.flashbox{
+width: 930px;
+margin: 50px auto;
+text-align: center;
+}
+
+.flashbox2{
+padding-bottom: 40px;
+margin: 50px auto;
+border-bottom: 2px solid #AFC065;
+text-align: center;
+text-decoration: none;
+}
+
+/* Table */
+
+table{
+border: 2px solid #AFC065;
+margin: 50px auto;
+border-collapse:collapse;
+color: black;
+}
+
+#table{
+width: 930px;
+margin: 50px auto;
+text-align: left;
+padding: 15px;
+padding-top: 0px;
+border-bottom: 2px solid #AFC065;
+font-family: verdana;
+}
+
+th{
+color: #323232;
+background-color: #dfe8c5;
+}
+
+tr{
+text-align: center;
+font-family: verdana;
+border: 2px solid #AFC065;
+background-color: #FFFCCF;
+}
+
+td{
+width: 400px;
+height: 50px;
+border: 2px solid #AFC065;
+}
+
+/* Contact Form */
+
+li{
+list-style: none;
+margin-bottom: 20px;
+}
+
+ul{
+padding-left: 0;
+}
+
+label{
+display:block;
+color: #646464;
+font-family: verdana;
+padding-bottom: 8px;
+}
+
+input{
+border: 2px solid #AFC065;
+border-radius: 4px;
+font-family: verdana;
+height: 20px;
+}
+
+/*Not working... */
+input.error {border:1px solid red;}
+input.errorlist {margin:0; color: red; margin-bottom:10px;}
+/* ---- */
+
+textarea{
+width: 300px;
+height: 200px;
+border: 2px solid #AFC065;
+border-radius: 10px;
+font-family: verdana;
+max-width: 300px;
+max-height: 200px;
+}
+
+#contacts{
+text-align:left;
+padding-left: 100px;
+padding-bottom: 20px;
+}
+
+.contactpic{
+border: 2px solid #AFC065;
+}
+
+/* Footer Area */
+
+#footer{
+text-align: center;
+clear:both;
+margin-top:50px;
+margin-bottom: 20px;
+font-family: verdana;
+}
+
+/*paragraphs and Headers */
+
+p{
+font-family: verdana;
+line-height:1.4em;
+margin-bottom:20px;
+color: #646464;
+}
+
+h1{
+color: #323232;
+}
+
+h2{
+color: #323232;
+}
+
+/*  some pages needed scrolling, some didn't. 
+When moving from one type of page to another, the appearance of a scrollbar moves the page a few pixels to the side.
+Overflow: scroll stops that. :) */ 
+
+html{
+overflow-y:scroll;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
